@@ -9,14 +9,10 @@ function problem5fn(inventory){
     let arr=[];
     for(let i=0; i<inventory.length; i++)
     {
-        arr.push(inventory[i].car_year);
+        if(inventory[i].car_year>=2000) arr.push(inventory[i]);
     }
-    let arrOP=[];
-    for(let j=0; j<arr.length; j++)
-    {
-        if(arr[j]>=2000) arrOP.push(arr[j]);
-    }
-    return arrOP.length;
+    
+    return [arr.length,arr];
 }
 
 module.exports.problem5=problem5fn;
